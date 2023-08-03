@@ -72,7 +72,7 @@
 			
 		</div>
 		<!--=============================Navigation Menu=============================-->
-		<div class="container pt-1-5 d-flex align-items-center">
+		<div class="container pt-1-5 d-flex align-items-center justify-content-center">
 			<ul class="nav nav-menu">
 			  <li role="presentation" class="active"><a href="index.html">Home</a></li>
 			  <li role="presentation"><a href="#">Lead Processing</a></li>
@@ -80,44 +80,7 @@
 			  <li role="presentation"><a href="#">Information</a></li>
 			  <li role="presentation"><a href="reporting.html">Reporting</a></li>
 			  <li role="presentation"><a href="#">Admin</a></li>
-			</ul>
-			
-			<div class="nav-right-overflow">
-				<div class="d-flex">
-					<div>
-						<!--=============================Calander Icon and Date=============================-->
-						<i class="fa-solid fa-calendar-days fa-2xl"></i>
-						<span class="">August 01, 2023,</span>
-					</div>
-					<div class="position-relative clockspan">
-						<!--=============================Clock Icon and Time=============================-->
-						<a href="#" onClick="viewClocks()" class="btn-clock" id="btn-clock"><i class="fa-solid fa-globe fa-2xl"></i></a>
-						<span class="">12:00pmCST</span>
-						<!--=============================Additional Clocks pop up Div=============================-->
-						<div class="additional-clocks d-none" id="additional-clocks">
-							<div class="d-flex justify-content-around">
-								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">New York</div></div>
-								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">London</div></div>
-								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">Berlin</div></div>
-								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">Moscow</div></div>
-							</div>
-							<div class="d-flex justify-content-around">
-								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">New York</div></div>
-								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">London</div></div>
-								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">Berlin</div></div>
-								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">Moscow</div></div>
-							</div>
-							<div class="d-flex justify-content-around">
-								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">New York</div></div>
-								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">London</div></div>
-								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">Berlin</div></div>
-								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">Moscow</div></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		
+			</ul>		
 		</div>
 	</div>
 	
@@ -410,17 +373,8 @@
 								</div>
 							<!--=============================Pie Charts=============================-->
 								<h6 class="title-2 text-black">Overall Performance Year to Date</h6>
-								<div class="display-board-2">
-									<div class="d-flex justify-content-between">
-										<div style="width:48%;">
-											<div class="chartContainer" id="chartContainer1"><canvas id="myChart1" class="w-100"></canvas></div>
-											<div class="chart-title">2022</div>
-										</div>
-										<div style="width:48%;">
-											<div class="chartContainer" id="chartContainer2"><canvas id="myChart2" class="w-100"></canvas></div>
-											<div class="chart-title">2022</div>
-										</div>
-									</div>
+								<div class="display-board-2" style="min-height: 200px;">
+									
 								</div>
 						</div>
 					</div>
@@ -441,82 +395,10 @@
 		</div>
 	</div>	
 	
-	
-	
-<!--=============================Script for Clock pop up=============================-->	
-<script src="js/script.js"></script>
-<!--=============================Script for Charts=============================-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <!--=============================Script for Slider=============================-->
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 	
 <script>
-
-//=============================Initialize Charts=============================
-document.addEventListener('DOMContentLoaded', function(){
-	
-	//chart 1
-	const chartContainer1 = document.querySelector('#chartContainer1');
-	const canvas1 = chartContainer1.querySelector('canvas');
-	const ctx1 = canvas1.getContext('2d');
-	
-	canvas1.width = chartContainer1.clientWidth;
-	canvas1.height = chartContainer1.clientHeight;
-	
-	const data1 = {
-		labels: ['A', 'B', 'C'],
-		datasets: [{
-			data:[45,35,20],
-			backgroundColor:['#405a6d', '#52728a', '#6c96b6'],
-		}]
-	};
-	
-	const myPieChart1 = new Chart(ctx1, {
-		type: 'pie',
-		data: data1,
-		options : {
-			responsive: true,
-			maintainAspectRatio:false,
-			legend : {
-				display:false
-			},
-			title: {
-				display: false,
-				text: '2022'
-			}
-		}
-	})
-	
-	//chart 2
-	const chartContainer2 = document.querySelector('#chartContainer2');
-	const canvas2 = chartContainer2.querySelector('canvas');
-	const ctx2 = canvas2.getContext('2d');
-	
-	canvas2.width = chartContainer2.clientWidth;
-	canvas2.height = chartContainer2.clientHeight;
-	
-	const data2 = {
-		labels: ['A', 'B'],
-		datasets: [{
-			data:[85,15],
-			backgroundColor:['#324554', '#5a7d98'],
-		}]
-	};
-	
-	const myPieChart2 = new Chart(ctx2, {
-		type: 'pie',
-		data: data2,
-		options : {
-			responsive: true,
-			maintainAspectRatio:false,
-			legend : {
-				display:false
-			}
-		}
-	})
-	
-});
-	
 //=============================Quick links accordion expand and collapse=============================
 	
 document.addEventListener('DOMContentLoaded', function () {
