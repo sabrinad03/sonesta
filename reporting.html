@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ignite Sonesta</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"  />
+<link href="css/style-new.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<div class="wrapper">
+	<!--=============================Header-Section=============================-->
+	<div class="header bg-white color-primary">
+		<div class="container d-flex align-items-center justify-content-right" style="height: 35px;">
+			<!--=============================LOGO=============================-->
+			<a href="index.html"><div class="logo"></div></a>
+			<!--=============================Notification Icon=============================-->
+			<div class="notification">
+				<i class="fa-regular fa-flag fa-lg"></i>
+				<span class="notification-indecator">2</span>
+			</div>
+			<div class="userblock">
+				<!--=============================User Icon=============================-->
+				<i class="fa-solid fa-user fa-lg px-2"></i>
+			</div>
+			<!--=============================Sign Out Button=============================-->
+			<button class="btn-new btn-signout">Sign Out</button>
+			
+		</div>
+		<!--=============================Navigation Menu=============================-->
+		<div class="container pt-1-5 d-flex align-items-center">
+			<ul class="nav nav-menu">
+			  <li role="presentation"><a href="index.html">Home</a></li>
+			  <li role="presentation"><a href="#">Lead Processing</a></li>
+			  <li role="presentation"><a href="#">Portfolio</a></li>
+			  <li role="presentation"><a href="#">Information</a></li>
+			  <li role="presentation" class="active"><a href="reporting.html">Reporting</a></li>
+			  <li role="presentation"><a href="#">Admin</a></li>
+			</ul>
+			
+			<div class="nav-right-overflow">
+				<div class="d-flex">
+					<div>
+						<!--=============================Calander Icon and Date=============================-->
+						<i class="fa-solid fa-calendar-days fa-2xl"></i>
+						<span class="">August 01, 2023,</span>
+					</div>
+					<div class="position-relative clockspan">
+						<!--=============================Clock Icon and Time=============================-->
+						<a href="#" onClick="viewClocks()" class="btn-clock" id="btn-clock"><i class="fa-solid fa-globe fa-2xl"></i></a>
+						<span class="">12:00pmCST</span>
+						<!--=============================Additional Clocks pop up Div=============================-->
+						<div class="additional-clocks d-none" id="additional-clocks">
+							<div class="d-flex justify-content-around">
+								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">New York</div></div>
+								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">London</div></div>
+								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">Berlin</div></div>
+								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">Moscow</div></div>
+							</div>
+							<div class="d-flex justify-content-around">
+								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">New York</div></div>
+								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">London</div></div>
+								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">Berlin</div></div>
+								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">Moscow</div></div>
+							</div>
+							<div class="d-flex justify-content-around">
+								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">New York</div></div>
+								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">London</div></div>
+								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">Berlin</div></div>
+								<div class="clock-dial"><img src="assets/clock-img.png" class="w-100" alt="..."><div class="clock-caption">Moscow</div></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+	
+	<!--=============================content-Section=============================-->
+	
+	<div class="container bg-white mt-5 pb-3">
+		<!--=============================Tab Buttons=============================-->
+		<div class="tab-strip d-flex">
+			<button id="btn-financial" class="btn-tab active" onclick="openTab(event, 'financial')">Financial</button>
+			<button id="btn-management" class="btn-tab" onclick="openTab(event, 'management')">Management</button>
+			<button id="btn-operational" class="btn-tab" onclick="openTab(event, 'operational')">Operational</button>
+		</div>
+		
+		<!--========================= TAB 01 =========================-->
+		<div id="financial" class="tab-div">
+			<div class="report-title">Financial Report Descriptions</div>
+		
+		
+			<table class="w-100 mt-3">
+				<thead>
+					<tr>
+						<td>&nbsp;</td>
+						<td>Select</td>
+						<td>Report Type</td>
+						<td>Description</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td><a href="#"><img src="assets/report.png" width="25" alt="..."></a></td>
+						<td>Actualized Report</td>
+						<td>Select a time frame to see the leads that were updated to Actualized status</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><a href="#"><img src="assets/report.png" width="25" alt="..."></a></td>
+						<td>Definite Report</td>
+						<td>Select a time frame to see the leads that were updated to Definite status</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><a href="#"><img src="assets/report.png" width="25" alt="..."></a></td>
+						<td>Business Transient Report</td>
+						<td>Select a time frame to see the monthly pickup for Actualized Business Transient leads</td>
+					</tr>
+				</tbody>
+			
+			</table>
+		
+		</div>
+		
+				<!--========================= TAB 02 =========================-->
+		<div id="management" class="tab-div" style="display: none;">
+			<div class="report-title">Management Report Descriptions</div>
+			<h1 align="center">Management report data here.........</h1>
+				
+		</div>
+		
+				<!--========================= TAB 03 =========================-->
+		<div id="operational" class="tab-div" style="display: none;">
+			<div class="report-title">Operational Report Descriptions</div>
+		
+			<h1 align="center">Operational report data here.........</h1>
+		
+		</div>
+		
+		
+		
+		
+	
+	</div>
+</div>
+	<!--=============================Footer=============================-->
+	<div class="footer bg-white">
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="col-md-2">
+					<a href="index.html"><img src="assets/logo.png" class="w-75" alt="..."></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<!--=============================Script for Clock pop up=============================-->	
+<script src="js/script.js"></script> 
+
+<script>
+	//=============================Script for Switching Tabs=============================
+	function openTab(evt, tabName) {
+	  var i, x, tablinks;
+	  x = document.getElementsByClassName("tab-div");
+	  for (i = 0; i < x.length; i++) {
+		x[i].style.display = "none";
+	  }
+	  tablinks = document.getElementsByClassName("btn-tab");
+	  for (i = 0; i < x.length; i++) {
+		tablinks[i].className = tablinks[i].className.replace(" active", "");
+	  }
+	  document.getElementById(tabName).style.display = "block";
+	  evt.currentTarget.className += " active";
+	}	
+</script>
+
+	
+	
+</body>
+</html>
+
+
+
